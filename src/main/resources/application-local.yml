@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8081
 
 spring:
   data:
@@ -20,23 +20,25 @@ mybatis:
 langchain4j:
   open-ai:
     chat-model:
-      base-url: http://localhost:11434/v1
-      api-key: null
-      model-name: qwen3:1.7b
+      base-url: https://dashscope.aliyuncs.com/compatible-mode/v1
+      api-key: ${DASHSCOPE_API_KEY}
+      model-name: qwen-plus
       log-requests: true
       log-responses: true
     streaming-chat-model:
-      base-url: http://localhost:11434/v1
-      api-key: null
-      model-name: qwen3:1.7b
+      base-url: https://dashscope.aliyuncs.com/compatible-mode/v1
+      api-key: ${DASHSCOPE_API_KEY}
+      model-name: qwen-plus
       log-requests: true
       log-responses: true
     embedding-model:
-      base-url: http://localhost:11434/v1
-      api-key: null
-      model-name: dengcao/Qwen3-Embedding-0.6B:Q8_0
+      base-url: https://dashscope.aliyuncs.com/compatible-mode/v1
+      api-key: ${DASHSCOPE_API_KEY}
+      model-name: text-embedding-v3
       log-requests: true
       log-responses: true
+      max-segments-per-batch: 10
+
   community:
     redis:
       host: localhost
