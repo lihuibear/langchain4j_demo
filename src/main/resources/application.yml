@@ -1,0 +1,39 @@
+server:
+  port: 8080
+
+langchain4j:
+  open-ai:
+    chat-model:
+      base-url: http://localhost:11434/v1
+      api-key: null
+      model-name: qwen3:1.7b
+      log-requests: true
+      log-responses: true
+    streaming-chat-model:
+      base-url: http://localhost:11434/v1
+      api-key: null
+      model-name: qwen3:1.7b
+      log-requests: true
+      log-responses: true
+    embedding-model:
+      base-url: http://localhost:11434/v1
+      api-key: null
+      model-name: dengcao/Qwen3-Embedding-0.6B:Q8_0
+      log-requests: true
+      log-responses: true
+
+
+  community:
+    redis:
+      host: localhost
+      port: 6379
+
+logging:
+  level:
+    dev.langchain4j: debug
+
+spring:
+  data:
+    redis:
+      host: localhost
+      port: 6379
